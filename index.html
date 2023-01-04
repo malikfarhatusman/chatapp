@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>FUM | Chat</title>
+  <style>
+    /* Add some style to the chat app */
+    .chat-box {
+      width: 500px;
+      height: 500px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+    }
+    .message {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #ccc;
+    }
+  </style>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Add a chat box -->
+  <div class="chat-box">
+    <!-- Add some messages to the chat box -->
+    <div class="message">
+      Hi there!
+    </div>
+    <div class="message">
+      How are you doing?
+    </div>
+  </div>
+  
+  <!-- Add a form for the user to send a message -->
+  <form id="chat-form">
+    <input type="text" id="message-input" placeholder="Enter a message...">
+    <button type="submit">Send</button>
+  </form>
+  
+  <script>
+    // Add some functionality to the chat app
+    const chatForm = document.querySelector('#chat-form');
+    const chatBox = document.querySelector('.chat-box');
+    
+    chatForm.addEventListener('submit', e => {
+      e.preventDefault();
+      
+      // Get the message from the input
+      const messageInput = document.querySelector('#message-input');
+      const message = messageInput.value;
+      
+      // Create a new message element and add it to the chat box
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+      messageElement.innerText = message;
+      chatBox.appendChild(messageElement);
+      
+      // Reset the message input
+      messageInput.value = '';
+    });
+  </script>
+
+
+
+
+
+  
+  <script src="script.js"></script>
+
+ <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> 
+</body>
+
+</html>
